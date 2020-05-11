@@ -80,8 +80,15 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: mission-tanp_production
-  username: mission-tanp
-  password: <%= ENV['MISSION-TANP_DATABASE_PASSWORD'] %>
-  port: 5432
+  # <<: *default
+  # database: mission-tanp_production
+  # username: mission-tanp
+  # password: <%= ENV['MISSION-TANP_DATABASE_PASSWORD'] %>
+  # port: 5432
+  adapter: pg
+  encoding: utf8
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>
