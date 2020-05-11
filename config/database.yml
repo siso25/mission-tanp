@@ -84,3 +84,4 @@ production:
   database: mission-tanp_production
   username: mission-tanp
   password: <%= ENV['MISSION-TANP_DATABASE_PASSWORD'] %>
+  port: 5432
