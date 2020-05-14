@@ -85,8 +85,8 @@ production:
   # username: mission-tanp
   # password: <%= ENV['MISSION-TANP_DATABASE_PASSWORD'] %>
   # port: 5432
-  adapter: pg
-  encoding: utf8
+  # adapter: pg
+  # encoding: utf8
   database: <%= ENV['RDS_DB_NAME'] %>
   username: <%= ENV['RDS_USERNAME'] %>
   password: <%= ENV['RDS_PASSWORD'] %>
