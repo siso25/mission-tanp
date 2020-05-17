@@ -6,10 +6,121 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/earlyaccess/notosansjapanese.css" rel="stylesheet" type="text/css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <header id="header">
+      <div class="header-inner">
+        <div class="left-contents">
+          <a href="/" class="header-logo">
+            <%= image_tag('/tanp.png')%>
+          </a>
+          <div class="header-search-wrapper">
+            <div class="header-search-box">
+              <input type="text">
+            </div>
+          </div>
+        </div>
+        <div class="header-nav">
+          <p>柴野翔太 様 ▼</p>
+          <i class="fas fa-shopping-cart"></i>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <div class="main-inner">
+        <%= yield %>
+      </div>
+    </main>
+
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-content-wrapper">
+          <div class="footer-content">
+            <p class="footer-content-title">TANPについて</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">TANPとは</a></li>
+              <li class="footer-menu-item"><a href="#">安心、安全への取り組み</a></li>
+              <li class="footer-menu-item"><a href="#">会社概要</a></li>
+              <li class="footer-menu-item"><a href="#">利用規約</a></li>
+              <li class="footer-menu-item"><a href="#">プライバシ―ポリシー</a></li>
+              <li class="footer-menu-item"><a href="#">特定商取引法</a></li>
+              <li class="footer-menu-item"><a href="#">メディア掲載情報</a></li>
+              <li class="footer-menu-item"><a href="#">レビュー一覧</a></li>
+              <li class="footer-menu-item"><a href="#">店舗・企業の皆さまへ</a></li>
+            </ul>
+          </div>
+          <div class="footer-content">
+            <p class="footer-content-title">一覧から探す</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">プレゼント一覧</a></li>
+              <li class="footer-menu-item"><a href="#">特集一覧</a></li>
+              <li class="footer-menu-item"><a href="#">ブランド一覧</a></li>
+              <li class="footer-menu-item"><a href="#">カテゴリ一覧</a></li>
+            </ul>
+          </div>
+          <div class="footer-content">
+            <p class="footer-content-title">ブランドから探す</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">kailijumei</a></li>
+              <li class="footer-menu-item"><a href="#">THE BODY SHOP</a></li>
+              <li class="footer-menu-item"><a href="#">FLOWERRiUM®</a></li>
+              <li class="footer-menu-item"><a href="#">CLAYD</a></li>
+              <li class="footer-menu-item"><a href="#">SOW EXPERIENCE</a></li>
+              <li class="footer-menu-item"><a href="#">VITAL MATERIAL</a></li>
+              <li class="footer-menu-item"><a href="#">Q-FLA</a></li>
+              <li class="footer-menu-item"><a href="#">SKINFOOD</a></li>
+            </ul>
+          </div>
+          <div class="footer-content">
+            <p class="footer-content-title">シーンから探す</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">誕生日</a></li>
+              <li class="footer-menu-item"><a href="#">記念日</a></li>
+              <li class="footer-menu-item"><a href="#">母の日</a></li>
+              <li class="footer-menu-item"><a href="#">父の日</a></li>
+              <li class="footer-menu-item"><a href="#">出産祝い</a></li>
+              <li class="footer-menu-item"><a href="#">結婚祝い</a></li>
+              <li class="footer-menu-item"><a href="#">お祝い</a></li>
+              <li class="footer-menu-item"><a href="#">自分へのご褒美</a></li>
+              <li class="footer-menu-item"><a href="#">その他のシーン</a></li>
+            </ul>
+          </div>
+          <div class="footer-content">
+            <p class="footer-content-title">ご利用ガイド</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">ご注文の流れ</a></li>
+              <li class="footer-menu-item"><a href="#">SNSでプレゼントを贈る</a></li>
+              <li class="footer-menu-item"><a href="#">お支払いについて</a></li>
+              <li class="footer-menu-item"><a href="#">ラッピングについて</a></li>
+              <li class="footer-menu-item"><a href="#">配送について</a></li>
+              <li class="footer-menu-item"><a href="#">TANP会員について</a></li>
+              <li class="footer-menu-item"><a href="#">おまとめ注文・法人のお客様</a></li>
+            </ul>
+          </div>
+          <div class="footer-content">
+            <p class="footer-content-title">ヘルプ</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">ヘルプ・お問い合わせ</a></li>
+              <li class="footer-menu-item"><a href="#">サービス改善アンケート</a></li>
+            </ul>
+            <p class="footer-content-title">SNS</p>
+            <ul class="footer-menu">
+              <li class="footer-menu-item"><a href="#">LINE</a></li>
+              <li class="footer-menu-item"><a href="#">Instagram</a></li>
+              <li class="footer-menu-item"><a href="#">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-copy-right">
+          <p>贈りたいギフトが見つかる ｜ TANP[タンプ]</p>
+          <p>Copyright© hoge</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
