@@ -94,8 +94,8 @@ body {
 
 .footer-content-wrapper {
   display: flex;
-  justify-content: space-between;
   .footer-content {
+    padding-right: 60px;
     .footer-content-title {
       font-size: 16px;
       font-weight: bold;
