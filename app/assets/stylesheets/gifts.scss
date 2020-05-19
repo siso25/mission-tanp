@@ -1,3 +1,60 @@
-// Place all the styles related to the Gifts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// ============================================
+// メインコンテンツ
+// ============================================
+.top-page-main {
+  display: flex;
+}
+
+// ============================================
+// 左側のメニュー
+// ============================================
+.left-side-menu {
+  flex-grow: 0;
+  background-color: lightgreen;
+  width: 180px;
+  .left-side-menu-content {
+    margin-bottom: 40px;
+    .left-side-menu-content-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #000000;
+      margin-bottom: 0.8em;;
+    }
+  }
+}
+.left-side-menu-list {
+  padding: 0;
+  margin: 0;
+  .left-side-menu-list-item {
+    font-size: 14px;
+    list-style: none;
+    margin-bottom: 0.8em;
+    a {
+      text-decoration: none;
+      color: #767676;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+// ============================================
+// メインコンテンツ
+// ============================================
+.center-content {
+  flex-grow: 1;
+  background-color:pink;
+  height: 500px;
+}
+
+// ============================================
+// 右側のメニュー
+// ============================================
+.right-side-menu {
+  flex-grow: 0;
+  background-color: blue;
+  width: 245px;
+  height: 500px;
+}
