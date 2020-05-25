@@ -1,5 +1,81 @@
+// パンくずリスト
+.breadcrumb-list {
+  display: flex;
+  padding: 0;
+  margin: 0 0 15px 0;
+  .breadcrumb-list-item {
+    font-size: 12px;
+    list-style: none;
+    padding: 0 7px;
+    a {
+      color: #767676;
+      text-decoration: underline;
+    }
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+  .breadcrumb-crrent-page {
+    color: #000000;
+  }
+  .breadcrumb-arrow {
+    font-size: 13px;
+  }
+}
+
 // ------------------------------------------------
 // 
 // 商品詳細ページ(show.html.erb)
 // 
 // ------------------------------------------------
+
+// 商品説明全体
+.product-main {
+  display: flex;
+}
+
+// 商品画像
+.product-main-image {
+  width: 480px;
+  .product-main-image-container {
+    height: 480px;
+    width: 480px;
+    display: table-cell;
+    vertical-align: middle;
+    border: 1px solid #EBE8E4;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+// 商品説明
+.product-main-info {
+  width: 544px;
+  .product-main-info-inner {
+    width: 494px;
+    margin-left: 50px;
+    padding: 0;
+  }
+}
+
+.product-main-info {
+  .product-title {
+    font-size: 20px;
+    color: #000000;
+  }
+}
+.product-brand {
+  .product-brand-link {
+    display: flex;
+    .product-brand-image {
+      height: 35px;
+      width: 35px;
+      border-radius: 50%;
+    }
+    .product-brand-name {
+      font-size: 14px;
+      color: #424242;
+    }
+  }
+}
