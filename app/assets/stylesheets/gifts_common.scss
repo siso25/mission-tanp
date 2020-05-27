@@ -66,6 +66,7 @@
   }
 }
 .product-brand {
+  margin-bottom: 20px;
   .product-brand-link {
     display: flex;
     .product-brand-image {
@@ -76,6 +77,68 @@
     .product-brand-name {
       font-size: 14px;
       color: #424242;
+      margin: 0;
+      padding: 7px 7px;
+    }
+  }
+}
+
+.product-shipping-date-container {
+  padding: 8px;
+  width: 100%;
+  background: #E0E0E0;
+  text-align: center;
+  margin-bottom: 15px;
+  .product-shipping-date {
+    margin: 0;
+    font-size: 14px;
+    color: #000000;
+    span {
+      font-size: 17px;
+      font-weight: bold;
+      color: #ff3e67;
+    }
+  }
+}
+
+.product-explan-text {
+  font-size: 14px;
+  margin: 0;
+  line-height: 21px;
+}
+.product-price {
+  font-size: 28px;
+  font-weight: bold;
+  span {
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 8px;
+  }
+}
+.express-delivery {
+  font-size: 14px;
+  margin: 0;
+  span {
+    color: #ff6688;
+  }
+}
+.purchase-button {
+  padding: 12px 0 15px 0;
+  background-color: #FF698B;
+  width: 330px;
+  border-radius: 5px;
+  .purchase-button-inner {
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    line-height: 22px;
+    .select-color-size {
+      font-size: 12px;
+      margin: 0;
+    }
+    .purchase-text {
+      font-size: 20px;
+      margin: 0;
     }
   }
 }
