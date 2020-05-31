@@ -1,0 +1,99 @@
+// ------------------------------------------------
+// 
+// 一覧ページ
+// 
+// ------------------------------------------------
+
+// 会員ページのヘッダー
+.member-page-header {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  .member-page-header-icon {
+    height: 40px;
+    width: 40px;
+  }
+  .member-page-header-username {
+    font-size: 20px;
+    line-height: 40px;
+    margin: 0;
+    margin-left: 10px;
+  }
+  .member-page-header-info {
+    font-size: 16px;
+    line-height: 40px;
+    margin: 0;
+    .member-page-header-point {
+      color: #ff8866;
+    }
+  }
+}
+
+
+// 会員ページのコンテンツ全体
+.member-page-contents-wrapper {
+  width: 100%;
+  display: flex;
+}
+
+
+// 会員ページの左側メニュー
+.member-page-left {
+  width: 180px;
+}
+
+.member-page-left-menu-section {
+  padding: 30px 0 20px;
+  border-bottom: 1px solid #E0E0E0;
+  .left-menu-title {
+    font-size: 18px;
+    font-weight: normal;
+    margin-top: 0;
+  }
+  .left-menu-list {
+    padding: 0;
+    margin-top: 15px;
+    .left-menu-list-item {
+      font-size: 14px;
+      list-style: none;
+      line-height: 20px;
+      padding-left: 5px;
+      margin-top: 13px;
+      a {
+        color: #555555;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .current-page {
+      font-weight: bold;
+    }
+  }
+}
+
+// 右側メインコンテンツ
+.member-page-right {
+  .member-page-right-section {
+    margin-left: 30px;
+    width: 814px;
+  }
+}
+
+.member-page-right-section {
+  .member-calender-description {
+    width: 100%;
+    border-bottom: 1px solid #E0E0E0;
+    margin-bottom: 20px;
+    .member-calender-description-title {
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 20px;
+      color: #ff8866;
+      padding: 24px;
+      margin: 0;
+      text-align: center;
+    }
+  }
+}
