@@ -55,7 +55,62 @@
       </div>
       <div class="member-calender">
         <div class="calender-switch">
-          
+          <ul class="calender-switch-items">
+            <!-- クリックしたらis-activeをクリックした方に付けるようにする -->
+            <li class="calender-switch-item">記念日</li>
+            <li class="calender-switch-item is-active">大切な人</li>
+          </ul>
+        </div>
+
+        <div class="calender-panel">
+          <div class="calender-panel-items">
+            <!-- 記念日タブ -->
+            <div class="calender-panel-item">
+              <a href="#" class="precious-day-add-button">
+                <p class="plus">＋</p>
+                <p class="add-text">記念日を追加する</p>
+              </a>
+              <div class="precious-day-calender">
+                <p class="precious-day-calender-title">1月</p>
+                <div class="precious-day-calender-cards">
+                  <a class="precious-day-calender-card">
+                    <%= image_tag '/users/calender/anniversary.jpg' %>
+                  </a>
+                  <a class="precious-day-calender-card">
+                    <%= image_tag '/users/calender/anniversary.jpg' %>
+                  </a>
+                </div>
+                <p class="precious-day-calender-title">2月</p>
+                <div class="precious-day-calender-cards">
+                  <a class="precious-day-calender-card">
+                    <%= image_tag '/users/calender/birthday.jpg' %>
+                  </a>
+                  <a class="precious-day-calender-card">
+                    <%= image_tag '/users/calender/birthday.jpg' %>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 大切な人タブ -->
+            <div class="calender-panel-item is-show">
+              <a href="#" class="precious-day-add-button">
+                <p class="plus">＋</p>
+                <p class="add-text">記念日を追加する</p>
+              </a>
+              <div class="precious-person-calender">
+                <p class="precious-person-calender-title">友達</p>
+                <ul class="precious-person-calender-items">
+                  <li class="precious-person-calender-item">
+                    <a>
+                      <%= image_tag '/users/calender/birthday.jpg' %>
+                      <p>テスト さん</p>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

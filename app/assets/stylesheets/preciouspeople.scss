@@ -97,3 +97,115 @@
     }
   }
 }
+
+.calender-switch {
+  margin-bottom: 60px;
+  .calender-switch-items {
+    height: 40px;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    font-size: 15px;
+    border: #FF8866 1px solid;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 0;
+    .calender-switch-item {
+      list-style: none;
+      width: 50%;
+      line-height: 40px;
+      text-align: center;
+      color: #FF8866;
+    }
+    .is-active {
+      color: #FFFFFF;
+      background-color: #FF8866;
+    }
+  }
+}
+
+// カレンダー
+.calender-panel {
+  .calender-panel-items {
+    .calender-panel-item {
+      display: none;
+    }
+    .is-show {
+      display: block;
+    }
+  }
+}
+
+// 記念日追加ボタン
+.calender-panel {
+  .calender-panel-items {
+    .calender-panel-item {
+      .precious-day-add-button {
+        display: flex;
+        font-size: 15px;
+        color: #FFFFFF;
+        background-color: #FF8866;
+        border-radius: 8px;
+        padding: 13px;
+        width: 316px;
+        text-decoration: none;
+        margin: 30px auto 40px;
+        justify-content: center;
+        transition: 0.5s;
+        &:hover {
+          opacity: 0.6;
+        }
+        p {
+          margin: 0;
+        }
+        .add-text {
+          font-weight: bold;
+        }
+        .plus {
+          margin-right: 14px;
+        }
+      }
+    }
+  }
+}
+
+
+// 記念日タブ
+.calender-panel-item {
+  .precious-day-calender {
+    .precious-day-calender-title {
+      font-size: 30px;
+      line-height: 45px;
+      color: #424242;
+      font-weight: bold;
+      padding: 4px;
+      margin: 0 0 24px;
+    }
+    .precious-day-calender-cards {
+      display: flex;
+      flex-wrap: wrap;
+      .precious-day-calender-card {
+        height: 258px;
+        width: 258px;
+        margin: 0 20px 34px 0;
+        border-radius: 8px;
+        overflow: hidden;
+        text-decoration: none;
+        transition: 0.5s;
+        &:hover {
+          opacity: 0.6;
+        }
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        img {
+          height: 258px;
+          width: 258px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+// 大切な人タブ
