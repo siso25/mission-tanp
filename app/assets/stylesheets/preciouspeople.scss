@@ -209,3 +209,41 @@
 }
 
 // 大切な人タブ
+  .precious-person-calender {
+    .precious-person-calender-title {
+    margin: 0;
+    }
+  }
+
+.precious-person-calender {
+  .precious-person-calender-items {
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  .precious-person-calender-item {
+    list-style: none;
+    a {
+      display: flex;
+      padding: 12px 0;
+      text-decoration: none;
+      transition: 0.5s;
+      &:hover {
+        opacity: 0.6;
+      }
+      img {
+        height: 56px;
+        width: 56px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      p {
+        color: #424242;
+        font-size: 16px;
+        line-height: 56px;
+        margin: 0;
+        padding: 0 16px;
+      }
+    }
+  }
+}
