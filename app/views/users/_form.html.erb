@@ -12,11 +12,52 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <p>名前（フルネーム）</p>
+    <%= form.text_field :name, class: 'name-field' %>
+  </div>
+
+  <div class="field">
+    <p>メールアドレス</p>
+    <%= form.email_field :email, class: 'email-field' %>
+  </div>
+
+  <div class="field">
+    <p>パスワード</p>
+    <%= form.password_field :password, class: 'password-field' %>
+    <div class="password-checkbox">
+      <input type="checkbox">
+      <p>パスワードを表示</p>
+    </div>
+  </div>
+
+  <div class="form-radio-wrapper">
+    <div class="form-radio-item">
+      <%= form.radio_button :gender, :male %>
+      <label for="male">男性</label>
+    </div>
+    <div class="form-radio-item">
+      <%= form.radio_button :gender, :female %>
+      <label for="female">女性</label>
+    </div>
+    <div class="form-radio-item">
+      <%= form.radio_button :gender, :other %>
+      <label for="other">その他</label>
+    </div>
+  </div>
+
+  <div class="form-select-wrapper">
+    <div class="form-select-item">
+      <%= form.select :birth_year, (1917..2007).to_a %>
+    </div>
+    <div class="form-select-item">
+      <%= form.select :birth_year, (1..12).to_a %>
+    </div>
+    <div class="form-select-item">
+      <%= form.select :birth_year, (1..30).to_a %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "登録" %>
   </div>
 <% end %>
