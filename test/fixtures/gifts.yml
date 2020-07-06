@@ -6,7 +6,7 @@
 #  brand_name      :string
 #  image_file_path :string
 #  name            :string
-#  price           :decimal(, )
+#  price           :decimal(15, 5)
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  brand_id        :integer

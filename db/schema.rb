@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_121823) do
+ActiveRecord::Schema.define(version: 2020_07_06_125617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_121823) do
 
   create_table "gifts", force: :cascade do |t|
     t.string "name"
-    t.decimal "price"
+    t.decimal "price", precision: 15, scale: 5
     t.integer "brand_id"
     t.string "brand_name"
     t.string "image_file_path"
