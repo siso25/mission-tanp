@@ -60,7 +60,7 @@
       </div>
 
       <div class="center-content">
-        <div class="center-content-section">
+        <!--div class="center-content-section">
           <h3 class="center-content-title">母の日ギフトランキング</h3>
           <div class="center-content-item">
             <div class="center-products">
@@ -116,17 +116,18 @@
               </div>
             </div>
           </div>
-        </div>
+        </div -->
         <div class="center-content-section">
           <h3 class="center-content-title">人気プレゼントランキング</h3>
           <div class="center-content-item">
             <div class="center-products">
               <div class="center-products-item">
                 <a href="#" class="product-item-link">
-                  <%= image_tag('/products/popular_1.jpg') %>
-                  <p class="product-category">リップ・ティント</p>
-                  <p class="product-title">【kailijumei】カイリジュメイ フラワーティントリップ</p>
-                  <p class="product-price">￥2,728</p>
+                  <%# <%= image_tag('/products/popular_1.jpg')  %>
+                  <%= image_tag(@gift.image_file_path) %>
+                  <p class="product-category"><%= @gift.category_name %></p>
+                  <p class="product-title"><%= @gift.name %></p>
+                  <p class="product-price">￥<%= @gift.price.floor.to_s(:delimited, delimiter: ',') %></p>
                 </a>
               </div>
               <div class="center-products-item">
