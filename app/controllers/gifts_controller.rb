@@ -1,8 +1,9 @@
 class GiftsController < ApplicationController
 
   def index
-    ranking_order = RankingOrder.find(1)
-    @gift = Gift.find(ranking_order.gift_id)
+    @ranking_orders = RankingOrder.where(category_id: 1).order(:rank)
+    first_rank_product = @ranking_orders.select { |ranking_order| ranking_order.rank == 1 }
+    @title = first_rank_product[0].category_name
   end
 
   def show

@@ -60,119 +60,25 @@
       </div>
 
       <div class="center-content">
-        <!--div class="center-content-section">
-          <h3 class="center-content-title">母の日ギフトランキング</h3>
-          <div class="center-content-item">
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/mother_day_1.jpg') %>
-                  <p class="product-category">セット商品</p>
-                  <p class="product-title">【TANP限定 スペシャルセット】リップ＆フラワリウム</p>
-                  <p class="product-price">￥7,390</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/mother_day_2.jpg') %>
-                  <p class="product-category">チョコレート</p>
-                  <p class="product-title">【Summerbird ORGANIC】数量限定 チョコレート＆フラワー限定</p>
-                  <p class="product-price">￥4,180</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/mother_day_3.jpg') %>
-                  <p class="product-category">ヘアケア</p>
-                  <p class="product-title">【TANP限定】【TANGLE TEEZER】コンパクトスタイラー</p>
-                  <p class="product-price">￥5,528</p>
-                </a>
-              </div>
-            </div>
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/mother_day_4.jpg') %>
-                  <p class="product-category">入浴剤</p>
-                  <p class="product-title">CLAYD WEEKBOOK</p>
-                  <p class="product-price">￥3,850</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/mother_day_5.jpg') %>
-                  <p class="product-category">リップ・ティント</p>
-                  <p class="product-title">Kailijumei｜フラワーリップ（日本限定ピンクゴールド）</p>
-                  <p class="product-price">￥2,728</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/mother_day_6.jpg') %>
-                  <p class="product-category">ハーバリウム</p>
-                  <p class="product-title">カーネーションFLOWERiUM（フラワリウム）®toilette(トワレ)</p>
-                  <p class="product-price">￥4,290</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div -->
         <div class="center-content-section">
-          <h3 class="center-content-title">人気プレゼントランキング</h3>
+          <h3 class="center-content-title"><%= @title %></h3>
           <div class="center-content-item">
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%# <%= image_tag('/products/popular_1.jpg')  %>
-                  <%= image_tag(@gift.image_file_path) %>
-                  <p class="product-category"><%= @gift.category_name %></p>
-                  <p class="product-title"><%= @gift.name %></p>
-                  <p class="product-price">￥<%= @gift.price.floor.to_s(:delimited, delimiter: ',') %></p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/popular_2.jpg') %>
-                  <p class="product-category">リップ・ティント</p>
-                  <p class="product-title">Kailijumei フラワーティントリップ【限定カラー】</p>
-                  <p class="product-price">￥1,980</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/popular_3.jpg') %>
-                  <p class="product-category">ネックレス</p>
-                  <p class="product-title">【Sears】テディベア＆誕生石オープンハート</p>
-                  <p class="product-price">￥7,700</p>
-                </a>
-              </div>
-            </div>
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/popular_4.jpg') %>
-                  <p class="product-category">マスク</p>
-                  <p class="product-title">ATB-UV+マスク 3枚セット</p>
-                  <p class="product-price">￥2,805</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/popular_5.jpg') %>
-                  <p class="product-category">ハーバリウム</p>
-                  <p class="product-title">FLOWERRiUM（フラワリウム）® toilette(トワレ)</p>
-                  <p class="product-price">￥4,290</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/popular_6.jpg') %>
-                  <p class="product-category">レディースパジャマ</p>
-                  <p class="product-title">【gelato pique】ベビモコマルチBD 上下セット</p>
-                  <p class="product-price">￥13,420</p>
-                </a>
-              </div>
-            </div>
+              <% @ranking_orders.each_with_index do |ranking_order, idx| %>
+                <% if idx % 3 == 0 %>
+                  <div class="center-products">
+                <% end %>
+                    <div class="center-products-item">
+                      <a href="#" class="product-item-link">
+                        <%= image_tag(ranking_order.gift.image_file_path) %>
+                        <p class="product-category"><%= ranking_order.gift.category_name %></p>
+                        <p class="product-title"><%= ranking_order.gift.name %></p>
+                        <p class="product-price">￥<%= ranking_order.gift.price.floor.to_s(:delimited, delimiter: ',') %></p>
+                      </a>
+                    </div>
+                <% if idx % 3 == 2 %>
+                  </div>
+                <% end %>
+              <% end %>
           </div>
         </div>
         <div class="center-content-section">
