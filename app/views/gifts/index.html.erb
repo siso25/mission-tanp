@@ -60,120 +60,29 @@
       </div>
 
       <div class="center-content">
-        <div class="center-content-section">
-          <h3 class="center-content-title"><%= @title %></h3>
-          <div class="center-content-item">
-              <% @ranking_orders.each_with_index do |ranking_order, idx| %>
-                <% if idx % 3 == 0 %>
-                  <div class="center-products">
-                <% end %>
-                    <div class="center-products-item">
-                      <a href="#" class="product-item-link">
-                        <%= image_tag(ranking_order.gift.image_file_path) %>
-                        <p class="product-category"><%= ranking_order.gift.category_name %></p>
-                        <p class="product-title"><%= ranking_order.gift.name %></p>
-                        <p class="product-price">￥<%= ranking_order.gift.price.floor.to_s(:delimited, delimiter: ',') %></p>
-                      </a>
+        <% @ranking_categories.each do |ranking_category| %>
+          <div class="center-content-section">
+            <h3 class="center-content-title"><%= ranking_category.category_name %></h3>
+            <div class="center-content-item">
+                <% @ranking_orders.select { |ranking_order| ranking_order.category_id == ranking_category.category_id }.each_with_index do |ranking_order, i| %>
+                  <% if i % 3 == 0 %>
+                    <div class="center-products">
+                  <% end %>
+                      <div class="center-products-item">
+                        <a href="/gifts/2" class="product-item-link">
+                          <%= image_tag(ranking_order.gift.image_file_path) %>
+                          <p class="product-category"><%= ranking_order.gift.category_name %></p>
+                          <p class="product-title"><%= ranking_order.gift.name %></p>
+                          <p class="product-price">￥<%= ranking_order.gift.price.floor.to_s(:delimited, delimiter: ',') %></p>
+                        </a>
+                      </div>
+                  <% if i % 3 == 2 %>
                     </div>
-                <% if idx % 3 == 2 %>
-                  </div>
+                  <% end %>
                 <% end %>
-              <% end %>
-          </div>
-        </div>
-        <div class="center-content-section">
-          <h3 class="center-content-title">ビューティーの人気プレゼント</h3>
-          <div class="center-content-item">
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/beauty_1.jpg') %>
-                  <p class="product-category">リップ・ティント</p>
-                  <p class="product-title">Kailijumei｜フラワーリップ（日本限定ピンクゴールド）</p>
-                  <p class="product-price">￥2,728</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/beauty_2.jpg') %>
-                  <p class="product-category">セット商品</p>
-                  <p class="product-title">【TANP限定】ギフトセット リップ＆誕生石ネックレス＆テディ</p>
-                  <p class="product-price">￥10,900</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/beauty_3.jpg') %>
-                  <p class="product-category">ヘアケア</p>
-                  <p class="product-title">【TANGLE TEEZER】コンパクトスタイラー</p>
-                  <p class="product-price">￥2,530</p>
-                </a>
-              </div>
             </div>
           </div>
-        </div>
-        <div class="center-content-section">
-          <h3 class="center-content-title">グルメ・スイーツの人気プレゼント</h3>
-          <div class="center-content-item">
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/food_1.jpg') %>
-                  <p class="product-category">調味料</p>
-                  <p class="product-title">【ありが豚でありがとうを！！】ビッグソルト(ボーイ)</p>
-                  <p class="product-price">￥1,620</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/food_2.jpg') %>
-                  <p class="product-category">チョコレート</p>
-                  <p class="product-title">【Summerbird ORGANIC】数量限定 チョコレート＆フラワー限定</p>
-                  <p class="product-price">￥4,400</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/food_3.jpg') %>
-                  <p class="product-category">洋菓子</p>
-                  <p class="product-title">Thankyou クリームパン6個詰め合わせ</p>
-                  <p class="product-price">￥1,750</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="center-content-section">
-          <h3 class="center-content-title">小物・文房具の人気プレゼント</h3>
-          <div class="center-content-item">
-            <div class="center-products">
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/accessory_1.jpg') %>
-                  <p class="product-category">ボールペン</p>
-                  <p class="product-title">【名入れギフト】PARKER ボールペン IM</p>
-                  <p class="product-price">￥4,048</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/accessory_2.jpg') %>
-                  <p class="product-category">ハンカチ</p>
-                  <p class="product-title">【MR.&MRS CHIEF】WEEK! ハンカチ 8枚セット</p>
-                  <p class="product-price">￥19,800</p>
-                </a>
-              </div>
-              <div class="center-products-item">
-                <a href="#" class="product-item-link">
-                  <%= image_tag('/products/accessory_3.jpg') %>
-                  <p class="product-category">腕時計</p>
-                  <p class="product-title">ヴェネチアングラス時計(DG5422)</p>
-                  <p class="product-price">￥8,800</p>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        <% end %>
       </div>
 
       <div class="right-side-menu">
@@ -203,54 +112,24 @@
         </div>
         <div class="right-side-section">
           <div class="right-side-section-inner">
-            <h4 class="right-side-section-title">新着プレゼント</h4>
-            <div class="new-products">
-              <div class="new-product-item">
-                <a href="#">
-                  <%= image_tag('/right_side/new_product_1.jpg') %>
-                  <div class="new-product-info">
-                    <p class="new-product-category">ベビーウェア</p>
-                    <p class="new-product-title">スムーズィーハートbaby 5点セット</p>
-                  </div>
-                </a>
-              </div>
-              <div class="new-product-item">
-                <a href="#">
-                  <%= image_tag('/right_side/new_product_2.jpg') %>
-                  <div class="new-product-info">
-                    <p class="new-product-category">レディースウェア</p>
-                    <p class="new-product-title">スムーズィーlite 3BD 上下セット</p>
-                  </div>
-                </a>
-              </div>
-              <div class="new-product-item">
-                <a href="#">
-                  <%= image_tag('/right_side/new_product_3.png') %>
-                  <div class="new-product-info">
-                    <p class="new-product-category">名刺入れ</p>
-                    <p class="new-product-title">【dunhill】DU19F2F47SG001R 名</p>
-                  </div>
-                </a>
-              </div>
-              <div class="new-product-item">
-                <a href="#">
-                  <%= image_tag('/right_side/new_product_4.jpg') %>
-                  <div class="new-product-info">
-                    <p class="new-product-category">財布</p>
-                    <p class="new-product-title">【EMPORIO ARMANI】 Y4R237-YLA0E/81072 二</p>
-                  </div>
-                </a>
-              </div>
-              <div class="new-product-item">
-                <a href="#">
-                  <%= image_tag('/right_side/new_product_5.jpg') %>
-                  <div class="new-product-info">
-                    <p class="new-product-category">財布</p>
-                    <p class="new-product-title">MICHAEL KORS 32F9G0LE9L/230 長財布</p>
-                  </div>
-                </a>
-              </div>
-            </div>
+            <% @new_product_rankings.each_with_index do |new_product_ranking, j| %>
+              <% if j == 0 %>
+                <h4 class="right-side-section-title"><%= new_product_ranking.category_name %></h4>
+                <div class="new-products">
+              <% end %>
+                <div class="new-product-item">
+                  <a href="#">
+                    <%= image_tag(new_product_ranking.gift.image_file_path) %>
+                    <div class="new-product-info">
+                      <p class="new-product-category"><%= new_product_ranking.gift.category_name %></p>
+                      <p class="new-product-title"><%= new_product_ranking.gift.name %></p>
+                    </div>
+                  </a>
+                </div>
+              <% if j == 0 %>
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
         <div class="right-side-section">

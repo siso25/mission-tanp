@@ -133,8 +133,14 @@
 .purchase-button {
   padding: 12px 0 15px 0;
   background-color: #FF698B;
+  border: none;
   width: 330px;
   border-radius: 5px;
+  transition: 0.5s;
+  outline: none;
+  &:hover {
+    opacity: 0.6;
+  }
   .purchase-button-inner {
     font-weight: bold;
     color: #ffffff;
@@ -150,13 +156,3 @@
     }
   }
 }
-
-
-// ------------------------------------------------
-// 
-// ユーザー(users/show.html.erb)
-// 
-// ------------------------------------------------
-
-
-

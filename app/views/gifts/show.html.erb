@@ -2,7 +2,7 @@
   <ul class="breadcrumb-list">
     <li class="breadcrumb-list-item"><a href="/">TANPホーム</a></li>
     <span class="breadcrumb-arrow"> > </span>
-    <li class="breadcrumb-list-item" class="breadcrmb-current-page">【kailijumei】カイリジュメイ フラワーティントリップ</li>
+    <li class="breadcrumb-list-item" class="breadcrmb-current-page"><%= @gift.name %></li>
   </ul>
 </div>
 
@@ -14,26 +14,26 @@
   </div>
   <div class="product-main-info">
     <div class="product-main-info-inner">
-      <h2 class="product-title">【kailijumei】カイリジュメイ フラワーティントリップ｜リップ・ティント</h2>
+      <h2 class="product-title"><%= @gift.name %></h2>
       
       <div class="product-brand">
         <a class="product-brand-link">
           <%= image_tag('/gifts_show/product/kailijumei_logo.jpg', class: 'product-brand-image') %>
-          <p class="product-brand-name">kailijumei</p>
+          <p class="product-brand-name"><%= @gift.brand_name %></p>
         </a>
       </div>
       <div class="product-shipping-date-container">
-        <p class="product-shipping-date">最短で<span>5月30日(土)</span>お届け(明日10時までのご決済完了で)</p>
+        <p class="product-shipping-date">最短で<span><%= @shipping_date %></span>お届け(明日10時までのご決済完了で)</p>
       </div>
       <p class="product-explan-text">女性の間で大人気、カイリジュメイ【kailijumei】。カイリジュメイは、透明なのに塗るとピンク色に変化し、世界に１つだけのカラーを生み出してくれるだけでなく、中に入っているお花の表情がひとつひとつ異なるガラス細工のようなティントリップです。 TANP限定で本体にお相手のお名前を刻印可能で、贈ったお相手にとって特別なプレゼントになります。</p>
-      <p class="product-main-price">￥2,728<span>税込</span></p>
+      <p class="product-main-price">￥<%= @gift.price.floor.to_s(:delimited, delimiter: ',' ) %><span>税込</span></p>
       <p class="express-delivery">（お急ぎ便は手数料<span>390円</span>がかかります）</p>
-      <div class="purchase-button">
+      <button class="purchase-button">
         <div class="purchase-button-inner">
           <p class="select-color-size">色・サイズなどを選択して</p>
           <p class="purchase-text">購入する</p>
         </div>
-      </div>
+      </button>
     </div>
   </div>
 </div>
