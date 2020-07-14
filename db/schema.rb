@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_10_132415) do
+ActiveRecord::Schema.define(version: 2020_07_14_120345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2020_07_10_132415) do
     t.datetime "updated_at", null: false
     t.integer "category_id"
     t.string "category_name"
+    t.string "brand_image_path"
+    t.text "explain_text"
   end
 
   create_table "precious_days", force: :cascade do |t|
@@ -56,6 +58,18 @@ ActiveRecord::Schema.define(version: 2020_07_10_132415) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_precious_people_on_user_id"
+  end
+
+  create_table "purchase_infomations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "gift_id"
+    t.datetime "purchased_on"
+    t.integer "quantity"
+    t.string "cancel_flug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gift_id"], name: "index_purchase_infomations_on_gift_id"
+    t.index ["user_id"], name: "index_purchase_infomations_on_user_id"
   end
 
   create_table "ranking_orders", force: :cascade do |t|
@@ -83,5 +97,7 @@ ActiveRecord::Schema.define(version: 2020_07_10_132415) do
   add_foreign_key "precious_days", "precious_people"
   add_foreign_key "precious_days", "users"
   add_foreign_key "precious_people", "users"
+  add_foreign_key "purchase_infomations", "gifts"
+  add_foreign_key "purchase_infomations", "users"
   add_foreign_key "ranking_orders", "gifts"
 end
