@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_14_120345) do
+ActiveRecord::Schema.define(version: 2020_07_18_115630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,7 +60,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_120345) do
     t.index ["user_id"], name: "index_precious_people_on_user_id"
   end
 
-  create_table "purchase_infomations", force: :cascade do |t|
+  create_table "purchase_records", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "gift_id"
     t.datetime "purchased_on"
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(version: 2020_07_14_120345) do
     t.string "cancel_flug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["gift_id"], name: "index_purchase_infomations_on_gift_id"
-    t.index ["user_id"], name: "index_purchase_infomations_on_user_id"
+    t.index ["gift_id"], name: "index_purchase_records_on_gift_id"
+    t.index ["user_id"], name: "index_purchase_records_on_user_id"
   end
 
   create_table "ranking_orders", force: :cascade do |t|
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2020_07_14_120345) do
   add_foreign_key "precious_days", "precious_people"
   add_foreign_key "precious_days", "users"
   add_foreign_key "precious_people", "users"
-  add_foreign_key "purchase_infomations", "gifts"
-  add_foreign_key "purchase_infomations", "users"
+  add_foreign_key "purchase_records", "gifts"
+  add_foreign_key "purchase_records", "users"
   add_foreign_key "ranking_orders", "gifts"
 end

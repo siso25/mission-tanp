@@ -43,7 +43,11 @@
     <div class="modal-content">
       <p><%= @gift.name %>の注文を確定しますか？</p>
       <p>※テストサイトのため料金は発生しません</p>
-      <button class="fixing-button">確定する</button>
+      <%= form_with url: purchase_records_path do |form| %>
+        <%= form.hidden_field :gift_id, value: @gift.id %>
+        <%= form.hidden_field :quantity, value: 1 %>
+        <%= form.submit "確定する", class: "fixing-button"%>
+      <% end %>
       <button class="cancel-button js-modal-close">キャンセル</button>
     </div>
   </div>

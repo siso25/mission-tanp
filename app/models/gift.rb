@@ -17,4 +17,5 @@
 #
 class Gift < ApplicationRecord
     has_many :ranking_order
+    has_many :puchase_infomation
 end
