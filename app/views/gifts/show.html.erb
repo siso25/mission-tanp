@@ -39,16 +39,20 @@
   
   <!-- モーダルウインドウ -->
   <div class="modal-wrapper js-modal">
-    <div class="modal-bg js-modal-close">
+    <div class="modal-bg js-modal-close"></div>
     <div class="modal-content">
-      <p><%= @gift.name %>の注文を確定しますか？</p>
-      <p>※テストサイトのため料金は発生しません</p>
-      <%= form_with url: purchase_records_path do |form| %>
-        <%= form.hidden_field :gift_id, value: @gift.id %>
-        <%= form.hidden_field :quantity, value: 1 %>
-        <%= form.submit "確定する", class: "fixing-button"%>
-      <% end %>
-      <button class="cancel-button js-modal-close">キャンセル</button>
+      <div class="modal-content-inner">
+        <p class="confirmation-text"><span><%= @gift.name %></span>の注文を確定しますか？</p>
+        <p class="attention-text">※テストサイトのため料金は発生しません</p>
+        <div class="modal-button">
+          <%= form_with url: purchase_records_path do |form| %>
+            <%= form.hidden_field :gift_id, value: @gift.id %>
+            <%= form.hidden_field :quantity, value: 1 %>
+            <%= form.submit "確定", class: "fixing-button"%>
+          <% end %>
+          <button class="cancel-button js-modal-close">キャンセル</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
