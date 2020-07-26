@@ -24,9 +24,10 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
+    # params[:user][:birth_day] = birth_day_join
     @user = User.new(user_params)
-
     respond_to do |format|
+      byebug
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
@@ -69,6 +70,23 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name)
+      params.require(:user).permit(:name,:birth_day,:email,:gender,:password_digest)
+    end
+
+    def birth_day_join
+      date = params[:user][:birth_day]
+      
+      # debug
+      byebug
+
+      year = date["birth_day(1i)"]
+      month = date["birth_day(2i)"]
+      day = date["birth_day(3i)"]
+
+      if year.empty? || month.empty? || day.empty?
+        return
+      end
+
+      birth_day = Time.new(year.to_i, month.to_i, day.to_i)
     end
 end

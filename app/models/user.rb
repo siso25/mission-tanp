@@ -13,5 +13,8 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-    has_many :puchase_infomation
+    has_many :purchase_record, dependent: :destroy
+    has_many :precious_day, dependent: :destroy
+    has_many :precious_personm dependent: :destroy
+    has_secure_password
 end

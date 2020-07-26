@@ -21,4 +21,5 @@
 #
 class PreciousPerson < ApplicationRecord
   belongs_to :user
+  has_many :precious_day, dependent: :destroy
 end

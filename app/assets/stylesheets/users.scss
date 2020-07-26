@@ -84,14 +84,12 @@
   .form-select-wrapper {
     display: flex;
     justify-content: space-between;
-    .form-select-item {
       select {
         height: 40px;
         width: 180px;
         font-size: 15px;
         color: #424242;
         border-radius: 3px;
-      }
     }
   }
 }
