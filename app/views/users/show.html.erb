@@ -4,6 +4,26 @@
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+<p>
+  <strong>Birthday:</strong>
+  <%= @user.birth_day %>
+</p>
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+<p>
+  <strong>Gender:</strong>
+  <%= @user.gender %>
+</p>
+<p>
+  <strong>password_digest:</strong>
+  <%= @user.password_digest %>
+</p>
+<p>
+  <strong>Address:</strong>
+  <%= @user.address %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -27,13 +27,10 @@ class UsersController < ApplicationController
     # params[:user][:birth_day] = birth_day_join
     @user = User.new(user_params)
     respond_to do |format|
-      byebug
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
-        format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -44,10 +41,10 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
+        # format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        # format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -63,30 +60,11 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:name,:birth_day,:email,:gender,:password_digest)
-    end
-
-    def birth_day_join
-      date = params[:user][:birth_day]
-      
-      # debug
-      byebug
-
-      year = date["birth_day(1i)"]
-      month = date["birth_day(2i)"]
-      day = date["birth_day(3i)"]
-
-      if year.empty? || month.empty? || day.empty?
-        return
-      end
-
-      birth_day = Time.new(year.to_i, month.to_i, day.to_i)
+      params.require(:user).permit(:name,:birth_day,:email,:gender,:password, :password_confirmation)
     end
 end

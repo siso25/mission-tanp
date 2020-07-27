@@ -1,5 +1,7 @@
 <%= form_with(model: user, local: true) do |form| %>
   <div class="member-registration-form-container">
+    <h2 class="member-registration-form-title"><%= title %></h2>
+
     <% if user.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -13,53 +15,58 @@
     <% end %>
 
     <div class="field">
-      <p>名前（フルネーム）</p>
-      <%= form.text_field :name, class: 'name-field' %>
+      <p class="field-label">名前（フルネーム）</p>
+      <%= form.text_field :name, class: 'name-field text-field' %>
     </div>
 
     <div class="field">
-      <p>メールアドレス</p>
-      <%= form.email_field :email, class: 'email-field' %>
+      <p class="field-label">メールアドレス</p>
+      <%= form.email_field :email, class: 'email-field text-field' %>
     </div>
 
     <div class="field">
-      <p>パスワード</p>
-      <%= form.password_field :password, class: 'password-field' %>
-      <div class="password-checkbox">
-        <input type="checkbox">
-        <p>パスワードを表示</p>
+      <p class="field-label">パスワード</p>
+      <%= form.password_field :password, class: 'password-field text-field' %>
+    </div>
+
+    <div class="field">
+      <p class="field-label">パスワード（確認用）</p>
+      <%= form.password_field :password_confirmation, class: 'password-field text-field' %>
+      <label class="password-checkbox-container">
+        <input type="checkbox" class="password-checkbox">
+        <span class="password-checkbox-label">パスワードを表示</span>
+      </label>
+    </div>
+
+    <div class="field">
+      <p class="field-label">性別</p>
+
+      <div class="form-radio-wrapper">
+        <div class="form-radio-item">
+          <%= form.radio_button :gender, :male %>
+          <%= form.label :male, "男性"%>
+        </div>
+        <div class="form-radio-item">
+          <%= form.radio_button :gender, :female %>
+          <label for="female">女性</label>
+        </div>
+        <div class="form-radio-item">
+          <%= form.radio_button :gender, :other %>
+          <label for="other">その他</label>
+        </div>
       </div>
     </div>
 
-    <div class="form-radio-wrapper">
-      <div class="form-radio-item">
-        <%= form.radio_button :gender, :male %>
-        <label for="male">男性</label>
-      </div>
-      <div class="form-radio-item">
-        <%= form.radio_button :gender, :female %>
-        <label for="female">女性</label>
-      </div>
-      <div class="form-radio-item">
-        <%= form.radio_button :gender, :other %>
-        <label for="other">その他</label>
-      </div>
-    </div>
+    <div class="field">
+      <p class="field-label">生年月日</p>
 
-    <div class="form-select-wrapper">
-      <div class="form-select-item">
-        <%= form.select :birth_year, (1917..2007).to_a %>
-      </div>
-      <div class="form-select-item">
-        <%= form.select :birth_month, (1..12).to_a %>
-      </div>
-      <div class="form-select-item">
-        <%= form.select :birth_day, (1..30).to_a %>
+      <div class="form-select-wrapper">
+        <%= form.date_select :birth_day, prompt: '--', use_month_numbers: true, start_year: Time.now.year, end_year: 1900 %>
       </div>
     </div>
 
     <div class="actions">
-      <%= form.submit "登録する" %>
+      <%= form.submit "登 録 す る" %>
     </div>
   </div>
 <% end %>
