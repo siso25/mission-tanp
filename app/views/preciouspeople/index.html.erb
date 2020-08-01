@@ -1,51 +1,11 @@
-<!-- パンくずリスト（パーシャルか何かで共通化） -->
-<div class="breadcrumb">
-  <ul class="breadcrumb-list">
-    <li class="breadcrumb-list-item"><a href="/">TANPホーム</a></li>
-    <span class="breadcrumb-arrow"> > </span>
-    <li class="breadcrumb-list-item" class="breadcrmb-current-page">記念日一覧</li>
-  </ul>
-</div>
+<!-- パンくずリスト -->
+<%= render 'breadcrumb', page_name: '記念日一覧' %>
 
-<!-- 会員ページのヘッダー（パーシャルか何かで共通化） -->
-<div class="member-page-header">
-  <%= image_tag '/users/mypage_header_icon.png', class: 'member-page-header-icon' %>
-  <p class="member-page-header-username">テスト 様のマイページ</p>
-  <p class="member-page-header-info">（
-    <!-- スペシャル会員とレギュラー会員によって表示を買えるようにする（余裕があれば） -->
-    <span class="member-page-header-rank">スペシャル会員</span>
-    /
-    <!-- 保存されているポイントを表示（余裕があれば） -->
-    <span class="member-page-header-point">0 TANPポイント</span>
-    ）
-  </p>
-</div>
+<!-- 会員ページのヘッダー -->
+<%= render 'member_page_header' %>
 
 <div class="member-page-contents-wrapper">
-  <!-- 会員ページの左側メニュー（パーシャルか何かで共通化） -->
-  <div class="member-page-left">
-    <div class="member-page-left-menu-section">
-      <h3 class="left-menu-title">メニュー</h3>
-      <ul class="left-menu-list">
-        <li class="left-menu-list-item"><a href="#">注文履歴</a></li>
-        <li class="left-menu-list-item"><a href="#">お気に入り商品</a></li>
-        <li class="left-menu-list-item current-page"><a href="#">記念日リマインダー</a></li>
-        <li class="left-menu-list-item"><a href="#">クーポン一覧</a></li>
-        <li class="left-menu-list-item"><a href="#">ポイントご利用履歴</a></li>
-        <li class="left-menu-list-item"><a href="#">お友だち紹介</a></li>
-      </ul>
-    </div>
-    
-    <div class="member-page-left-menu-section">
-      <h3 class="left-menu-title">登録情報</h3>
-      <ul class="left-menu-list">
-        <li class="left-menu-list-item"><a href="#">会員情報</a></li>
-        <li class="left-menu-list-item"><a href="#">クレジットカード情報</a></li>
-        <li class="left-menu-list-item"><a href="#">パスワード変更</a></li>
-        <li class="left-menu-list-item"><a href="#">メルマガ設定/退会</a></li>
-      </ul>
-    </div>
-  </div>
+  <%= render 'member_left_menu' %>
 
   <!-- 記念日一覧 -->
   <div class="member-page-right">

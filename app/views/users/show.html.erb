@@ -1,29 +1,43 @@
-<p id="notice"><%= notice %></p>
+<%= render 'preciouspeople/breadcrumb', page_name: '登録情報の確認' %>
+<%= render 'preciouspeople/member_page_header' %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
-<p>
-  <strong>Birthday:</strong>
-  <%= @user.birth_day %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
-<p>
-  <strong>password_digest:</strong>
-  <%= @user.password_digest %>
-</p>
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+<div class="member-page-contents-wrapper">
+  <%= render 'preciouspeople/member_left_menu' %>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class="member-page-right">
+    <div class="member-page-right-section">
+      <div class="member-info-title">
+        <h2>会員登録情報</h2>
+      </div>
+      <div class="member-info-contents">
+        <div class="member-info-contents-item">
+          <p class="info-content-header">名前</p>
+          <p class="info-content-data">柴野翔太（シバノショウタ）</p>
+        </div>
+        <div class="member-info-contents-item">
+          <p class="info-content-header">性別</p>
+          <p class="info-content-data">男性</p>
+        </div>
+        <div class="member-info-contents-item">
+          <p class="info-content-header">生年月日</p>
+          <p class="info-content-data">未登録</p>
+        </div>
+        <div class="member-info-contents-item">
+          <p class="info-content-header">住所</p>
+          <p class="info-content-data">NNNNNNNNNNNNNNNNN</p>
+        </div>
+        <div class="member-info-contents-item">
+          <p class="info-content-header">メールアドレス</p>
+          <p class="info-content-data">NNNNNNNNNNNNNNNNN</p>
+        </div>
+        <div class="member-info-contents-item">
+          <p class="info-content-header">電話番号</p>
+          <p class="info-content-data">XXXXXXXXXXX</p>
+        </div>
+      </div>
+      <div class="info-update-button">
+        <a href="#"><p>編集する</p></a>
+      </div>
+    </div>
+  </div>
+</div>
