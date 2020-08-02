@@ -12,31 +12,37 @@
       <div class="member-info-contents">
         <div class="member-info-contents-item">
           <p class="info-content-header">名前</p>
-          <p class="info-content-data">柴野翔太（シバノショウタ）</p>
+          <p class="info-content-data"><%= @user.name %></p>
         </div>
         <div class="member-info-contents-item">
           <p class="info-content-header">性別</p>
-          <p class="info-content-data">男性</p>
+          <p class="info-content-data"><%= @gender %></p>
         </div>
         <div class="member-info-contents-item">
           <p class="info-content-header">生年月日</p>
-          <p class="info-content-data">未登録</p>
+          <p class="info-content-data"><%= @birthday %></p>
+        </div>
+        <div class="member-info-contents-item">
+          <p class="info-content-header">郵便番号</p>
+          <p class="info-content-data"><%= @postcode %></p>
         </div>
         <div class="member-info-contents-item">
           <p class="info-content-header">住所</p>
-          <p class="info-content-data">NNNNNNNNNNNNNNNNN</p>
+          <p class="info-content-data"><%= @address %></p>
         </div>
         <div class="member-info-contents-item">
           <p class="info-content-header">メールアドレス</p>
-          <p class="info-content-data">NNNNNNNNNNNNNNNNN</p>
+          <p class="info-content-data"><%= @user.email %></p>
         </div>
         <div class="member-info-contents-item">
           <p class="info-content-header">電話番号</p>
-          <p class="info-content-data">XXXXXXXXXXX</p>
+          <p class="info-content-data"><%= @phone_number %></p>
         </div>
-      </div>
-      <div class="info-update-button">
-        <a href="#"><p>編集する</p></a>
+        <div class="info-update-button">
+          <a href="<%= edit_user_path %>">
+            <p>編集する</p>
+          </a>
+        </div>
       </div>
     </div>
   </div>

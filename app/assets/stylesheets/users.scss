@@ -157,3 +157,30 @@
     width: calc(100% - 180px);
   }
 }
+
+.info-update-button {
+  height: 40px;
+  width: 120px;
+  border: none;
+  background-color: #FF6787;
+  outline: none;
+  border-radius: 3px;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.6;
+  }
+  a {
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+  }
+  p {
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0;
+    line-height: 40px;
+  }
+}

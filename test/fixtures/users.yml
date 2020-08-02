@@ -4,11 +4,13 @@
 #
 #  id              :bigint           not null, primary key
 #  address         :string
-#  birth_day       :time
+#  birthday        :date
 #  email           :string
 #  gender          :integer
 #  name            :string
 #  password_digest :string
+#  phone_number    :string
+#  postcode        :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #

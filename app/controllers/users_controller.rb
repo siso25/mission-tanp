@@ -1,30 +1,26 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  # GET /users
-  # GET /users.json
   def index
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
+    @gender = @user.gender.nil? ? "未登録" : japanese_gender_name(@user.gender)
+    @birthday = @user.birthday.nil? ? "未登録" : @user.birthday.strftime("%Y年%-m月%-d日")
+    @postcode = @user.postcode.nil? ? "未登録" : @user.postcode
+    @address = @user.address.nil? ? "未登録" : @user.address
+    @phone_number = @user.phone_number.nil? ? "未登録" : @user.phone_number
   end
 
-  # GET /users/new
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
   def edit
   end
 
-  # POST /users
-  # POST /users.json
   def create
-    # params[:user][:birth_day] = birth_day_join
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
@@ -35,22 +31,16 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /users/1
-  # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        # format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
-        # format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /users/1
-  # DELETE /users/1.json
   def destroy
     @user.destroy
     respond_to do |format|
@@ -65,6 +55,19 @@ class UsersController < ApplicationController
     end
 
     def user_params
-      params.require(:user).permit(:name,:birth_day,:email,:gender,:password, :password_confirmation)
+      params.require(:user).permit(:name,:birthday,:email,:gender,:password, :password_confirmation)
+    end
+
+    def japanese_gender_name(gender)
+      case gender
+      when 0 then
+        "男性"
+      when 1 then
+        "女性"
+      when 2 then
+        "その他"
+      else
+        "未登録"
+      end
     end
 end
