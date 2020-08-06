@@ -209,11 +209,11 @@
 }
 
 // 大切な人タブ
-  .precious-person-calender {
-    .precious-person-calender-title {
+.precious-person-calender {
+  .precious-person-calender-title {
     margin: 0;
-    }
   }
+}
 
 .precious-person-calender {
   .precious-person-calender-items {
@@ -245,5 +245,107 @@
         padding: 0 16px;
       }
     }
+  }
+}
+
+
+// ------------------------------------------------
+// 
+// 詳細ページ
+// 
+// ------------------------------------------------
+
+// 画面上部
+.precious-people-wrapper {
+  width: calc(700px - 30px * 2);
+  padding: 30px;
+  box-shadow: 5px 5px 15px 2px #dbdbdb;
+  margin: 50px auto 0;
+}
+
+.precious-people-wrapper {
+  .precious-people-header {
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+  }
+}
+
+.precious-people-wrapper {
+  .three-point-reader {
+    position: absolute;
+    right: 0;
+    width: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.precious-people-header-item {
+  .precious-people-image {
+    height: 90px;
+    width: 90px;
+    margin: 0 auto;
+    img {
+      height: 90px;
+      width: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      text-align: center;
+    }
+  }
+  .precious-people-name {
+    font-size: 15px;
+    color: #424242;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+}
+
+// 記念日一覧
+.precious-day-list {
+  .precious-day-list-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #424242;
+    margin: 0 0 10px;
+  }
+  .precious-day-list {
+    margin-bottom: 30px;
+  }
+}
+
+.precious-day-list {
+  .precious-day-list-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+}
+
+.precious-day-list {
+  .precious-day-list-image {
+    img {
+      height: 310px;
+      width: 310px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+  }
+  .precious-day-event-name {
+    font-size: 14px;
+    color: #424242;
+    margin: 0;
+    margin-top: 5px;
+  }
+  .precious-day-date {
+    font-size: 14px;
+    color: #767676;
+    margin: 0;
+    margin-top: 5px;
   }
 }

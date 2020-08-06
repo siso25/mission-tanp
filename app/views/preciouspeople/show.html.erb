@@ -1,0 +1,60 @@
+<!-- パンくずリスト -->
+<%= render '/preciouspeople/breadcrumb', page_name: "xxxさんの記念日" %>
+
+<div class="precious-people-wrapper">
+    <!-- ヘッダー部 -->
+    <div class="precious-people-header">
+        <%= image_tag '/other/three_point_reader.svg', class: "three-point-reader" %>
+        <div class="precious-people-header-item">
+            <div class="precious-people-image">
+                <%= image_tag '/users/calender/birthday.jpg' %>
+            </div>
+            <p class="precious-people-name">テスト</p>
+        </div>
+    </div>
+
+    <!-- 記念日一覧 -->
+    <div class="precious-day-list">
+        <h2 class="precious-day-list-title">記念日一覧</h2>
+        <div class="precious-day-list-container">
+            <div class="precious-day-list-item">
+                <div class="precious-day-list-image">
+                    <%= image_tag '/users/calender/birthday.jpg' %>
+                </div>
+                <p class="precious-day-event-name">誕生日</p>
+                <p class="precious-day-date">1996年05月12日</p>
+            </div>
+            <div class="precious-day-list-item">
+                <div class="precious-day-list-image">
+                    <%= image_tag '/users/calender/birthday.jpg' %>
+                </div>
+                <p class="precious-day-event-name">記念日</p>
+                <p class="precious-day-date">2005年03月12日</p>
+            </div>
+        </div>
+        <div class="precious-day-list-container">
+            <div class="precious-day-list-item">
+                <div class="precious-day-list-image">
+                    <%= image_tag '/users/calender/birthday.jpg' %>
+                </div>
+                <p class="precious-day-event-name">お歳暮</p>
+                <p class="precious-day-date">2021年08月15日</p>
+            </div>
+            <div class="precious-day-list-item">
+                <div class="precious-day-list-image">
+                    <%= image_tag '/users/calender/birthday.jpg' %>
+                </div>
+                <p class="precious-day-event-name">記念日</p>
+                <p class="precious-day-date">2015年04月08日</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 記念日追加ボタン -->
+    <div clas="precious-day-add-button">
+        <a href="#">
+            <p class="plus">＋</p>
+            <p class="add-text">記念日を追加する</p>
+        </a>
+    </div>
+</div>
