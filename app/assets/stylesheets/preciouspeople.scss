@@ -284,25 +284,52 @@
   }
 }
 
+// ヘッダー部分
 .precious-people-header-item {
+  width: 90px;
+  margin: 0 auto;
   .precious-people-image {
     height: 90px;
-    width: 90px;
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
     img {
-      height: 90px;
-      width: 90px;
+      height: 100%;
+      width: 100%;
       object-fit: cover;
       border-radius: 50%;
       text-align: center;
     }
   }
   .precious-people-name {
+    width: 100%;
     font-size: 15px;
     color: #424242;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 0;
+  }
+}
+
+// ギフトメモ
+.gift-memo {
+  .gift-memo-title {
+    h2 {
+      font-size: 16px;
+      font-weight: bold;
+      color: #424242;
+      margin: 0 0 10px;
+    }
+  }
+  .gift-memo-text {
+    margin-bottom: 30px;
+    textarea {
+      border: 1px #E0E0E0 solid;
+      width: calc(100% - 10px * 2);
+      border-radius: 8px;
+      resize: vertical;
+      padding: 10px;
+      color: #424242;
+    }
   }
 }
 
@@ -347,5 +374,36 @@
     color: #767676;
     margin: 0;
     margin-top: 5px;
+  }
+}
+
+.precious-people-wrapper {
+  .precious-day-add-button {
+    width: 316px;
+    padding: 13px;
+    margin: 60px auto 45px;
+    background-color: #FF8866;
+    border-radius: 8px;
+    transition: 0.5s;
+    &:hover {
+      opacity: 0.6;
+    }
+    a {
+      display: flex;
+      font-size: 15px;
+      color: #FFFFFF;
+      width: 100%;
+      text-decoration: none;
+      justify-content: center;
+      p {
+        margin: 0;
+      }
+      .add-text {
+        font-weight: bold;
+      }
+      .plus {
+        margin-right: 14px;
+      }
+    }
   }
 }
