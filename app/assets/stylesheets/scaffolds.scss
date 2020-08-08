@@ -9,6 +9,10 @@ body {
   line-height: 1.5em;
   font-family: 'Noto Sans Japanese',sans-serif;
   margin: 0;
+  // フォームはフォントが継承されないことがある
+  button, input, select, textarea {
+    font-family: inherit;
+  }
 }
 
 
