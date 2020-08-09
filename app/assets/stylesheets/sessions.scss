@@ -1,0 +1,138 @@
+// ------------------------------------------------
+// 
+// ログインページ
+// 
+// ------------------------------------------------
+.user-login-page-container {
+    height: 400px;
+    width: 1000px;
+    display: flex;
+    margin: 60px auto 0;
+}
+
+// ログインフォーム
+.user-login-form {
+    height: 100%;
+    width: 100%;
+    border-right: 1px solid #EBE8E4; ;
+    margin-bottom: 15px;
+    padding-right: 50px;
+    .user-login-title {
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}
+
+.user-login-form {
+    .field-label {
+        font-size: 12px;
+        color: #767676;
+        margin-bottom: 8px;
+    }
+    .text-field {
+        width: 100%;
+        border: 1px solid #EBE8E4;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 14px;
+        color: #424242;
+        box-sizing: border-box;
+        &::placeholder {
+            color: #EBE8E4
+        }
+    }
+}
+
+.user-login-form {
+    .password-checkbox-container {
+        display: inline-block;
+        margin: 20px 0 10px;
+        .password-checkbox {
+            margin: 0;
+        }
+        .password-checkbox-label {
+            margin: 0;
+            font-size: 12px;
+            line-height: 12.8px;
+        }
+    }
+}
+
+.user-login-form {
+  .actions {
+    input {
+        display: block;
+        height: 60px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 30px auto 0;
+        padding: 10px 20px;
+        color: #FFFFFF;
+        background-color: #FF6787;
+        border: none;
+        border-radius: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+  }
+}
+
+
+// 新規登録
+.user-sign-in-form {
+    width: 100%;
+    padding: 0 50px;
+    .user-sign-in-title {
+        font-size: 20px;
+        text-align: center;
+        font-weight: bold;
+        margin-top: 0;
+        margin-bottom: 40px;
+    }
+}
+
+.user-sign-in-form {
+    .user-sign-in-coupon {
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.user-sign-in-form {
+    .user-sign-in-link {
+        height: 60px;
+        width: 100%;
+        margin: 17px auto 0;
+        border-radius: 5px;
+        border: none;
+        background-color: #FF8866;
+        box-sizing: border-box;
+        transition: 0.5s;
+        &:hover {
+            opacity: 0.6;
+        }
+    }
+    .sign-in-link-button {
+        height: 100%;
+        width: 100%;
+        text-decoration: none;
+        p {
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 60px;
+            text-align: center;
+            color: #FFFFFF;
+            margin: 0;
+        }
+    }
+
+}

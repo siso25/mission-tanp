@@ -6,4 +6,7 @@ Rails.application.routes.draw do
   end
   resources :gifts, only: [:index, :show]
   resources :purchase_records, only: [:create]
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 end
