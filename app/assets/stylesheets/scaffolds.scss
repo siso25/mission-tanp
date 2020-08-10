@@ -66,19 +66,27 @@ body {
 .header-inner .header-nav {
   display: flex;
   padding-right: 40px;
-  p {
+  .login-nav-text {
     margin: 0;
     font-size:15px;
     color: #FF8866;
     margin: auto 0;
     margin-right: 40px;
   }
-  i {
+  .login-nav-icon {
     font-size: 20px;
     margin: auto 0;
     margin-left: 44px;
   }
 }
+
+.header-inner .header-nav {
+  .not-login-nav {
+    display: flex;
+    
+  }
+}
+
 
 
 // ============================================
