@@ -26,6 +26,7 @@ body {
   padding: 0;
   border: 0;
   box-shadow: 0 2px 5px #0000001a;
+  position: relative;
 }
 .header-inner {
   height: 64px;
@@ -63,27 +64,89 @@ body {
     }
   }
 }
+
+.header-inner {
+  .header-nav {
+    display: flex;
+    padding-right: 40px;
+    position: relative;
+  }
+}
+
+
 .header-inner .header-nav {
-  display: flex;
-  padding-right: 40px;
-  .login-nav-text {
+  .login-user-name {
     margin: 0;
     font-size:15px;
     color: #FF8866;
     margin: auto 0;
     margin-right: 40px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+    span {
+      font-size: 13px;
+    }
   }
   .login-nav-icon {
     font-size: 20px;
     margin: auto 0;
     margin-left: 44px;
   }
+  .login-nav-hidden {
+    display: none;
+  } 
+  .login-nav {
+    display: block;
+    position: absolute;
+    width: 180px;
+    box-sizing: border-box;
+    padding: 18px;
+    background-color: #ffffff;
+    z-index: 1;
+    top: 30px;
+    left: -40px;
+    box-shadow: 1px 1px 2px 0 rgba(51,27,20,.4);
+  }
+  .login-nav-item {
+    list-style: none;
+    margin-bottom: 10px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  a {
+    font-size: 14px;
+    color: #767676;
+    text-decoration: none;
+  }
 }
 
 .header-inner .header-nav {
   .not-login-nav {
+    height: 22px;
+    margin: auto 0;
     display: flex;
-    
+    padding: 0;
+    .not-login-nav-list {
+      list-style: none;
+      font-size: 15px;
+      padding-left: 25px;
+      line-height: 22px;
+      margin-right: 25px;
+      border-left: 1px solid #424242;
+      &:hover {
+        text-decoration: underline;
+      }
+      &:first-child {
+        border-left: none;
+      }
+      a {
+        text-decoration: none;
+        color: #424242;
+      }
+    }
   }
 }
 

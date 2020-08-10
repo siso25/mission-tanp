@@ -24,16 +24,28 @@
             </div>
           </div>
         </div>
-        <%# if logged_in? %>
           <div class="header-nav">
-            <% if true %>
+            <% if logged_in? %>
               <ul class="not-login-nav">
-                <li class="not-login-nav-list">新規会員登録</li>
-                <li class="not-login-nav-list">ログイン</li>
+                <li class="not-login-nav-list"><a href="<%= new_user_path %>">新規会員登録</a></li>
+                <li class="not-login-nav-list"><a href="<%= login_path %>">ログイン</a></li>
               </ul>
-            <% else %>
-              <p class="login-nav-text">ユーザー 様 ▼</p>
               <i class="login-nav-icon fas fa-shopping-cart"></i>
+            <% else %>
+              <p class="login-user-name js-header-dropdown-open">ユーザー 様 <span>&#9662;</span></p>
+              <i class="login-nav-icon fas fa-shopping-cart"></i>
+              <ul class="js-header-dropdown-menu login-nav-hidden">
+                <li class="login-nav-item"><a href="">ご注文履歴</a></li>
+                <li class="login-nav-item"><%= link_to '記念日リマインダー', "" %></li>
+                <li class="login-nav-item"><a href="">お気に入り商品</a></li>
+                <li class="login-nav-item"><a href="">クーポン一覧</a></li>
+                <li class="login-nav-item"><a href="">ポイントご利用履歴</a></li>
+                <li class="login-nav-item"><a href="">登録情報の確認・修正</a></li>
+                <li class="login-nav-item"><a href="">クレジットカード情報</a></li>
+                <li class="login-nav-item"><a href="">パスワード変更</a></li>
+                <li class="login-nav-item"><a href="">メルマガ設定/退会</a></li>
+                <li class="login-nav-item"><%= link_to 'ログアウト', "" %></li>
+              </ul>
             <% end %>
           </div>
       </div>
