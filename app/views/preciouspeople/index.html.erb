@@ -25,10 +25,10 @@
           <div class="calender-panel-items">
             <!-- 記念日タブ -->
             <div class="calender-panel-item precious-day-panel is-show">
-              <a href="#" class="precious-day-add-button">
+              <%= link_to preciousdays_new_path, class: "precious-day-add-button" do %>
                 <p class="plus">＋</p>
                 <p class="add-text">記念日を追加する</p>
-              </a>
+              <% end %>
               <div class="precious-day-calender">
                 <p class="precious-day-calender-title">1月</p>
                 <div class="precious-day-calender-cards">
@@ -53,10 +53,10 @@
 
             <!-- 大切な人タブ -->
             <div class="calender-panel-item precious-person-panel">
-              <a href="" class="precious-day-add-button">
+              <%= link_to preciousdays_new_path, class: "precious-day-add-button" do %>
                 <p class="plus">＋</p>
                 <p class="add-text">記念日を追加する</p>
-              </a>
+              <% end %>
               <div class="precious-person-calender">
                 <p class="precious-person-calender-title">友達</p>
                 <ul class="precious-person-calender-items">

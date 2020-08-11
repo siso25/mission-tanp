@@ -15,9 +15,9 @@
     <header id="header">
       <div class="header-inner">
         <div class="left-contents">
-          <a href="/" class="header-logo">
+          <%= link_to root_path, class: "header-logo" do %>
             <%= image_tag('/tanp.png')%>
-          </a>
+          <% end %>
           <div class="header-search-wrapper">
             <div class="header-search-box">
               <input type="text">
@@ -26,24 +26,24 @@
         </div>
           <div class="header-nav">
             <% if logged_in? %>
-              <p class="login-user-name js-header-dropdown-open">ユーザー 様 <span>&#9662;</span></p>
+              <p class="login-user-name js-header-dropdown-open"><%= current_user.name %> 様 <span>&#9662;</span></p>
               <i class="login-nav-icon fas fa-shopping-cart"></i>
               <ul class="js-header-dropdown-menu login-nav-hidden">
-                <li class="login-nav-item"><a href="">ご注文履歴</a></li>
+                <li class="login-nav-item"><%= link_to 'ご注文履歴', "" %></li>
                 <li class="login-nav-item"><%= link_to '記念日リマインダー', preciouspeople_path %></li>
-                <li class="login-nav-item"><a href="">お気に入り商品</a></li>
-                <li class="login-nav-item"><a href="">クーポン一覧</a></li>
-                <li class="login-nav-item"><a href="">ポイントご利用履歴</a></li>
-                <li class="login-nav-item"><a href="">登録情報の確認・修正</a></li>
-                <li class="login-nav-item"><a href="">クレジットカード情報</a></li>
-                <li class="login-nav-item"><a href="">パスワード変更</a></li>
-                <li class="login-nav-item"><a href="">メルマガ設定/退会</a></li>
+                <li class="login-nav-item"><%= link_to 'お気に入り商品' %></li>
+                <li class="login-nav-item"><%= link_to 'クーポン一覧', "" %></li>
+                <li class="login-nav-item"><%= link_to 'ポイントご利用履歴', "" %></li>
+                <li class="login-nav-item"><%= link_to '登録情報の確認・修正', user_path(current_user) %></li>
+                <li class="login-nav-item"><%= link_to 'クレジットカード情報', "" %></li>
+                <li class="login-nav-item"><%= link_to 'パスワード変更', "" %></li>
+                <li class="login-nav-item"><%= link_to 'メルマガ設定/退会', "" %></li>
                 <li class="login-nav-item"><%= link_to 'ログアウト', logout_path, method: :delete %></li>
               </ul>
             <% else %>
               <ul class="not-login-nav">
-                <li class="not-login-nav-list"><a href="<%= new_user_path %>">新規会員登録</a></li>
-                <li class="not-login-nav-list"><a href="<%= login_path %>">ログイン</a></li>
+                <li class="not-login-nav-list"><%= link_to '新規会員登録', new_user_path %></li>
+                <li class="not-login-nav-list"><%= link_to 'ログイン', login_path %></li>
               </ul>
               <i class="login-nav-icon fas fa-shopping-cart"></i>
             <% end %>
