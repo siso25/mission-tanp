@@ -1,7 +1,7 @@
 <div class="user-login-page-container">
     <div class="user-login-form">
         <h2 class="user-login-title">すでに会員の方</h2>
-        <%= form_with url: login_path do |form| %>
+        <%= form_with scope: :session, url: login_path do |form| %>
             <div class="field">
                 <p class="field-label">メールアドレス</p>
                 <%= form.email_field :email, placeholder: 'メールアドレス', class: 'email-field text-field' %>
