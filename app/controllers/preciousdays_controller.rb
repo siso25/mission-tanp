@@ -3,6 +3,8 @@ class PreciousdaysController < ApplicationController
   end
 
   def new
+    @precious_person = PreciousPerson.new
+    @precious_person.precious_days.build
   end
 
   def create

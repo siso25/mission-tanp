@@ -2,14 +2,13 @@
 #
 # Table name: precious_people
 #
-#  id                     :bigint           not null, primary key
-#  image_file_path        :string
-#  name                   :string
-#  relation_category_name :string
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  relation_category_id   :integer
-#  user_id                :bigint
+#  id                   :bigint           not null, primary key
+#  image_file_path      :string
+#  name                 :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  relation_category_id :integer
+#  user_id              :bigint
 #
 # Indexes
 #
@@ -21,5 +20,7 @@
 #
 class PreciousPerson < ApplicationRecord
   belongs_to :user
-  has_many :precious_day, dependent: :destroy
+  has_many :precious_days, dependent: :destroy
+
+  accepts_nested_attributes_for :precious_days
 end

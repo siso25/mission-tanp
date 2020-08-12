@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_02_103738) do
+ActiveRecord::Schema.define(version: 2020_08_12_045147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2020_08_02_103738) do
     t.string "image_file_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "scene_id"
     t.index ["precious_person_id"], name: "index_precious_days_on_precious_person_id"
     t.index ["user_id"], name: "index_precious_days_on_user_id"
   end
@@ -53,7 +54,6 @@ ActiveRecord::Schema.define(version: 2020_08_02_103738) do
     t.bigint "user_id"
     t.string "name"
     t.integer "relation_category_id"
-    t.string "relation_category_name"
     t.string "image_file_path"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

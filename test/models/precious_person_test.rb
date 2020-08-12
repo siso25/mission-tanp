@@ -2,14 +2,13 @@
 #
 # Table name: precious_people
 #
-#  id                     :bigint           not null, primary key
-#  image_file_path        :string
-#  name                   :string
-#  relation_category_name :string
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
-#  relation_category_id   :integer
-#  user_id                :bigint
+#  id                   :bigint           not null, primary key
+#  image_file_path      :string
+#  name                 :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  relation_category_id :integer
+#  user_id              :bigint
 #
 # Indexes
 #

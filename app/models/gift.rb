@@ -16,6 +16,6 @@
 #  category_id      :integer
 #
 class Gift < ApplicationRecord
-    has_many :ranking_order, dependent: :destroy
-    has_many :puchase_record
+    has_many :ranking_orders, dependent: :destroy
+    has_many :puchase_records
 end

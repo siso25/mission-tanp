@@ -9,6 +9,7 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  precious_person_id :bigint
+#  scene_id           :integer
 #  user_id            :bigint
 #
 # Indexes

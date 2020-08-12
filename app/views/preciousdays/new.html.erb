@@ -2,5 +2,29 @@
 <%= render '/preciouspeople/breadcrumb', page_name: '記念日追加' %>
 
 <div class="member-calender">
-    
+    <%= form_with model: @precious_person, url: preciousdays_path, local: true do |form| %>
+        <div class="precious-day-registration">
+            <h2 class="precious-day-registration-title">記念日登録</h2>
+            <div class="precious-person-image">
+            </div>
+
+            <div class="precious-day-registration-section">
+                <h3 class="registration-section-title">お相手情報登録</h3>
+                <div class="field">
+                    <p class="field-label">お相手のお名前</p>
+                    <%= form.text_field :name, class: 'name-field text-field' %>
+                </div>
+            </div>
+
+            <div class="precious-day-registration-section">
+                <h3 class="registration-section-title">記念日情報登録</h3>
+                <%= form.fields_for :precious_days do |day| %>
+                    <div class="field">
+                        <p class="field-label">記念日</p>
+                        <%= day.text_field :name, class: 'name-field text-field' %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
 </div>
