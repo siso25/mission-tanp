@@ -23,4 +23,19 @@ class PreciousPerson < ApplicationRecord
   has_many :precious_days, dependent: :destroy
 
   accepts_nested_attributes_for :precious_days
+
+  enum relation: {
+    girlfriend:     0,
+    boyfriend:      1,
+    female_friend:  2,
+    male_friend:    3,
+    male:           4,
+    female:         5,
+    husband:        6,
+    wife:           7,
+    father:         8,
+    mother:         9,
+    grandmother:    10,
+    grandfather:    11
+  }
 end

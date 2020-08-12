@@ -65,12 +65,56 @@
 // 記念日新規登録ページ
 // 
 // ------------------------------------------------
-.field {
-    margin-bottom: 15px;
+.precious-day-registration {
+    .precious-day-registration-title {
+        text-align: center;
+        color: #767676;
+        font-size: 20px;
+        margin: 0;
+    }   
+}
+
+.precious-day-registration {
+    .precious-person-image {
+        height: 270px;
+        width: 270px;
+        margin: 35px auto 0;
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 12px;
+    }
+}
+
+.precious-day-registration {
+    .precious-day-registration-form {
+        margin-top: 45px;
+    }
+}
+
+.precious-day-registration {
+    .precious-day-registration-section {
+        margin-top: 35px;
+    }
+}
+
+.precious-day-registration {
+    .registration-section-title {
+        font-weight: normal;
+        font-size: 14px;
+        padding-left: 10px;
+        margin: 0;
+        border-left: solid 3px #FF8865;
+    }
+}
+
+.precious-day-registration {
+    .field {
+        margin-bottom: 15px;
+    }
     .field-label {
         font-size: 12px;
         color: #767676;
-        margin-bottom: 8px;
+        margin: 20px 0 0;
     }
     .text-field {
         width: 100%;
@@ -80,5 +124,89 @@
         font-size: 14px;
         color: #424242;
         box-sizing: border-box;
+        margin-top: 5px;
+    }
+}
+
+// ラジオボタン
+.precious-day-registration {
+    .registration-form-select-items {
+        width: 100%;
+        height: 45px;
+        padding: 8px 0 5px;
+        margin: 5px 0 0;
+        overflow-x: scroll;
+        white-space: nowrap;
+        box-sizing: border-box;
+    }
+    .registration-form-select-item {
+        display: inline-block;
+        height: 100%;
+        list-style: none;
+        margin-right: 5px;
+        input {
+            display: none;
+            margin: 0;
+            &:checked + label {
+                background-color: #FF8866;
+                color: #FFFFFF;
+            }
+        }
+        label {
+            font-size: 13px;
+            color: #FF8866;
+            padding: 7px 16px;
+            border: solid 1px #FF8866;
+            background-color: #FFFFFF;
+            border-top-left-radius: 25% 50%;
+            border-top-right-radius: 25% 50%;
+            border-bottom-left-radius: 25% 50%;
+            border-bottom-right-radius: 25% 50%;
+        }
+    }
+}
+
+// セレクトボックス
+.precious-day-registration {
+    .form-select-wrapper {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+        select {
+          height: 40px;
+          width: 200px;
+          font-size: 15px;
+          color: #424242;
+          border-radius: 3px;
+          border: solid 1px #e0e0e0;
+          box-sizing: border-box;
+          padding-left: 10px;
+      }
+    }
+}
+
+// 登録ボタン
+.precious-day-registration {
+    .actions {
+        width: 100%;
+        input {
+            display: block;
+            height: 45px;
+            width: 340px;
+            margin: 45px auto 55px;
+            font-size: 15px;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #FF8866;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 8px;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: 0.5s;
+            &:hover {
+                opacity: 0.6;
+            }
+        }
     }
 }

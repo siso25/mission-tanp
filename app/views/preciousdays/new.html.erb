@@ -8,22 +8,61 @@
             <div class="precious-person-image">
             </div>
 
-            <div class="precious-day-registration-section">
-                <h3 class="registration-section-title">お相手情報登録</h3>
-                <div class="field">
-                    <p class="field-label">お相手のお名前</p>
-                    <%= form.text_field :name, class: 'name-field text-field' %>
+            <div class="precious-day-registration-form">
+                <div class="precious-day-registration-section">
+                    <h3 class="registration-section-title">お相手情報登録</h3>
+                    <div class="field">
+                        <p class="field-label">お相手のお名前</p>
+                        <%= form.text_field :name, class: 'name-field text-field' %>
+                    </div>
+                    <div class="field">
+                        <p class="field-label">お相手はどのような方ですか？</p>
+                        <ul class="registration-form-select-items">
+                            <li class="registration-form-select-item">
+                                <input type="radio" name="relation_category_id" id="girlfriend">
+                                <label for="girlfriend">彼女</label>
+                            </li>
+                            <li class="registration-form-select-item">
+                                <input type="radio" name="relation_category_id" id="boyfriend">
+                                <label for="boyfriend">彼氏</label>
+                            </li>
+                            <li class="registration-form-select-item">
+                                <input type="radio" name="relation_category_id" id="female_friend">
+                                <label for="female_friend">女友達</label>
+                            </li>
+                            <li class="registration-form-select-item">
+                                <input type="radio" name="relation_category_id" id="male_friend">
+                                <label for="male_friend">男友達</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="precious-day-registration-section">
+                    <h3 class="registration-section-title">記念日情報登録</h3>
+                    <%= form.fields_for :precious_days do |day| %>
+                        <div class="field">
+                            <p class="field-label">記念日の種類</p>
+                            <ul class="registration-form-select-items">
+                                <li class="registration-form-select-item">
+                                    <input type="radio" name="relation_category_id" id="girlfriend">
+                                    <label for="girlfriend">彼女</label>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="field">
+                            <p class="field-label">記念日の日にち</p>
+                            <div class="form-select-wrapper">
+                                <%= form.date_select :precious_date, use_month_numbers: true, start_year: Time.now.year, end_year: 1900 %>
+                            </div>
+                        </div>
+                    <% end %>
                 </div>
             </div>
 
-            <div class="precious-day-registration-section">
-                <h3 class="registration-section-title">記念日情報登録</h3>
-                <%= form.fields_for :precious_days do |day| %>
-                    <div class="field">
-                        <p class="field-label">記念日</p>
-                        <%= day.text_field :name, class: 'name-field text-field' %>
-                    </div>
-                <% end %>
+            <div class="actions">
+                <%= form.submit '記念日登録' %>
             </div>
         </div>
     <% end %>

@@ -5,7 +5,7 @@
 #  id                 :bigint           not null, primary key
 #  image_file_path    :string
 #  name               :string
-#  precious_date      :time
+#  precious_date      :date
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  precious_person_id :bigint
