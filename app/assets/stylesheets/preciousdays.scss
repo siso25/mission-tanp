@@ -125,6 +125,9 @@
         color: #424242;
         box-sizing: border-box;
         margin-top: 5px;
+        &::placeholder {
+            color: #EBE8E4;
+        }
     }
 }
 
@@ -158,10 +161,7 @@
             padding: 7px 16px;
             border: solid 1px #FF8866;
             background-color: #FFFFFF;
-            border-top-left-radius: 25% 50%;
-            border-top-right-radius: 25% 50%;
-            border-bottom-left-radius: 25% 50%;
-            border-bottom-right-radius: 25% 50%;
+            border-radius: 16.5px;
         }
     }
 }
