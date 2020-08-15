@@ -25,7 +25,7 @@
           <div class="calender-panel-items">
             <!-- 記念日タブ -->
             <div class="calender-panel-item precious-day-panel is-show">
-              <%= link_to preciousdays_new_path, class: "precious-day-add-button" do %>
+              <%= link_to new_preciousday_path, class: "precious-day-add-button" do %>
                 <p class="plus">＋</p>
                 <p class="add-text">記念日を追加する</p>
               <% end %>
@@ -53,7 +53,7 @@
 
             <!-- 大切な人タブ -->
             <div class="calender-panel-item precious-person-panel">
-              <%= link_to preciousdays_new_path, class: "precious-day-add-button" do %>
+              <%= link_to new_preciousday_path, class: "precious-day-add-button" do %>
                 <p class="plus">＋</p>
                 <p class="add-text">記念日を追加する</p>
               <% end %>

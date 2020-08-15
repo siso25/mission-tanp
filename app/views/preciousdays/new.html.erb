@@ -13,9 +13,13 @@
                     <h3 class="registration-section-title">お相手情報登録</h3>
                     <div class="field">
                         <p class="field-label">お相手を選択</p>
-                        <%#= form.text_field :name, placeholder: 'お相手を新しく登録', class: 'name-field text-field' %>
                         <%# セレクトボックスで既存の相手を選ぶか、新規登録するかを選べる %>
-                        <div class="text-field"></div>
+                        <%= form.select(:id) do %>
+                            <%= content_tag(:option, 'お相手を新たに追加', value: '') %>
+                            <% @precious_people.each do |precious_person| %>
+                                <%= content_tag(:option, precious_person.name, value: precious_person.id) %>
+                            <% end %>
+                        <% end %>
                     </div>
                     <div class="field">
                         <p class="field-label">お相手のお名前</p>
@@ -47,14 +51,15 @@
 
                 <div class="precious-day-registration-section">
                     <h3 class="registration-section-title">記念日情報登録</h3>
-                    <%= form.fields_for :precious_days do |day| %>
+                    <%= form.fields_for :precious_days do |day_form| %>
+                        <%= day_form.hidden_field :id %>
                         <div class="field">
                             <p class="field-label">記念日の種類</p>
                             <ul class="registration-form-select-items">
                                 <% PreciousDay.scenes_i18n.each do |en, ja| %>
                                     <li class="registration-form-select-item">
-                                        <%= form.radio_button :scene_id, en.intern %>
-                                        <%= form.label ("scenes_id_#{en}").intern, ja %>
+                                        <%= day_form.radio_button :scene_id, en.intern %>
+                                        <%= day_form.label ("scene_id_#{en}").intern, ja %>
                                     </li>
                                 <% end %>
                             </ul>
@@ -63,7 +68,7 @@
                         <div class="field">
                             <p class="field-label">記念日の日にち</p>
                             <div class="form-select-wrapper">
-                                <%= form.date_select :precious_date, use_month_numbers: true, start_year: Time.now.year, end_year: 1900 %>
+                                <%= day_form.date_select :precious_date, use_month_numbers: true, start_year: Time.now.year, end_year: 1900 %>
                             </div>
                         </div>
                     <% end %>

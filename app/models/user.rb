@@ -16,7 +16,6 @@
 #
 class User < ApplicationRecord
     has_many :purchase_records, dependent: :destroy
-    has_many :precious_days, dependent: :destroy
     has_many :precious_people, dependent: :destroy
     has_secure_password
     enum gender: { male: 0, female: 1, other: 2 }

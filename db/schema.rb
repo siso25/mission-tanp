@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_083535) do
+ActiveRecord::Schema.define(version: 2020_08_15_120646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,6 @@ ActiveRecord::Schema.define(version: 2020_08_13_083535) do
   end
 
   create_table "precious_days", force: :cascade do |t|
-    t.bigint "user_id"
     t.bigint "precious_person_id"
     t.string "name"
     t.string "image_file_path"
@@ -47,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_08_13_083535) do
     t.integer "scene_id"
     t.date "precious_date"
     t.index ["precious_person_id"], name: "index_precious_days_on_precious_person_id"
-    t.index ["user_id"], name: "index_precious_days_on_user_id"
   end
 
   create_table "precious_people", force: :cascade do |t|
@@ -98,7 +96,6 @@ ActiveRecord::Schema.define(version: 2020_08_13_083535) do
 
   add_foreign_key "gift_memos", "precious_people"
   add_foreign_key "precious_days", "precious_people"
-  add_foreign_key "precious_days", "users"
   add_foreign_key "precious_people", "users"
   add_foreign_key "purchase_records", "gifts"
   add_foreign_key "purchase_records", "users"
