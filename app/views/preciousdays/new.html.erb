@@ -2,7 +2,7 @@
 <%= render '/preciouspeople/breadcrumb', page_name: '記念日追加' %>
 
 <div class="member-calender">
-    <%= form_with model: @precious_person, url: preciousdays_path, local: true do |form| %>
+    <%= form_with model: @precious_day_form, url: preciousdays_path, local: true do |form| %>
         <div class="precious-day-registration">
             <h2 class="precious-day-registration-title">記念日登録</h2>
             <div class="precious-person-image">
@@ -47,27 +47,24 @@
 
                 <div class="precious-day-registration-section">
                     <h3 class="registration-section-title">記念日情報登録</h3>
-                    <%= form.fields_for :precious_days do |day_form| %>
-                        <%= day_form.hidden_field :id %>
-                        <div class="field">
-                            <p class="field-label">記念日の種類</p>
-                            <ul class="registration-form-select-items">
-                                <% PreciousDay.scenes_i18n.each do |en, ja| %>
-                                    <li class="registration-form-select-item">
-                                        <%= day_form.radio_button :scene_id, en.intern %>
-                                        <%= day_form.label ("scene_id_#{en}").intern, ja %>
-                                    </li>
-                                <% end %>
-                            </ul>
-                        </div>
+                    <div class="field">
+                        <p class="field-label">記念日の種類</p>
+                        <ul class="registration-form-select-items">
+                            <% PreciousDay.scenes_i18n.each do |en, ja| %>
+                                <li class="registration-form-select-item">
+                                    <%= form.radio_button :scene_id, en.intern %>
+                                    <%= form.label ("scene_id_#{en}").intern, ja %>
+                                </li>
+                            <% end %>
+                        </ul>
+                    </div>
 
-                        <div class="field">
-                            <p class="field-label">記念日の日にち</p>
-                            <div class="date-select-wrapper">
-                                <%= day_form.date_select :precious_date, use_month_numbers: true, start_year: Time.now.year, end_year: 1900 %>
-                            </div>
+                    <div class="field">
+                        <p class="field-label">記念日の日にち</p>
+                        <div class="date-select-wrapper">
+                            <%= form.date_select :precious_date, use_month_numbers: true, start_year: Time.now.year, end_year: 1900 %>
                         </div>
-                    <% end %>
+                    </div>
                 </div>
             </div>
 
