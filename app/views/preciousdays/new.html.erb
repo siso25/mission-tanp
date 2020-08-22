@@ -14,7 +14,7 @@
                     <div class="field">
                         <p class="field-label">お相手を選択</p>
                         <div class="form-select-wrapper">
-                            <%= form.select :id, @precious_people.pluck(:name, :id), {prompt: 'お相手を新たに追加'}, {class: 'name-select'} %>
+                            <%= form.select :id, @precious_people.pluck(:name, :id), {include_blank: 'お相手を新たに追加', selected: ""}, {class: 'name-select'} %>
                         </div>
                     </div>
                     <div class="field precious-person-data">
