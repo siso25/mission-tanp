@@ -9,8 +9,12 @@ class PreciousdaysController < ApplicationController
   
   def create
     @precious_day_form = PreciousDayForm.new(precious_day_form_params)
-    byebug
-    render :new
+    if @precious_day_form.save
+      redirect_to preciouspeople_url
+    else
+      @precious_people = PreciousPerson.where(user_id: current_user.id)
+      render :new
+    end
   end
 
   def update
@@ -27,7 +31,9 @@ class PreciousdaysController < ApplicationController
         :age_id,
         :relation_id,
         :scene_id,
-        :precious_date
+        :year,
+        :month,
+        :day
       ).merge(user_id: current_user.id)
     end
 end
