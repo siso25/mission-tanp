@@ -31,14 +31,16 @@
               <% end %>
               <div class="precious-day-calender">
                 <p class="precious-day-calender-title">1月</p>
-                <div class="precious-day-calender-cards">
-                  <a class="precious-day-calender-card">
-                    <%= image_tag '/users/calender/anniversary.jpg' %>
-                  </a>
-                  <a class="precious-day-calender-card">
-                    <%= image_tag '/users/calender/anniversary.jpg' %>
-                  </a>
-                </div>
+                <% @precious_days.each do |precious_day| %>
+                  <div class="precious-day-calender-cards">
+                    <a class="precious-day-calender-card">
+                      <%= image_tag '/users/calender/anniversary.jpg' %>
+                    </a>
+                    <%= precious_day.id %>
+                    <%= precious_day.precious_date %>
+                    <%= precious_day.scene_id %>
+                  </div>
+                <% end %>
                 <p class="precious-day-calender-title">2月</p>
                 <div class="precious-day-calender-cards">
                   <a class="precious-day-calender-card">
