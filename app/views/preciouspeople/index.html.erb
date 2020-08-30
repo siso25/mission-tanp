@@ -5,84 +5,69 @@
 <%= render 'member_page_header' %>
 
 <div class="member-page-contents-wrapper">
-  <%= render 'member_left_menu' %>
+    <%= render 'member_left_menu' %>
 
-  <!-- 記念日一覧 -->
-  <div class="member-page-right">
-    <div class="member-page-right-section">
-      <div class="member-calender-description">
-        <p class="member-calender-description-title">記念日リマインダー</p>
-      </div>
-      <div class="member-calender">
-        <div class="calender-switch">
-          <ul class="calender-switch-items">
-            <li class="calender-switch-item switch-precious-day is-active">記念日</li>
-            <li class="calender-switch-item switch-precious-person">大切な人</li>
-          </ul>
-        </div>
-
-        <div class="calender-panel">
-          <div class="calender-panel-items">
-            <!-- 記念日タブ -->
-            <div class="calender-panel-item precious-day-panel is-show">
-              <%= link_to new_preciousday_path, class: "precious-day-add-button" do %>
-                <p class="plus">＋</p>
-                <p class="add-text">記念日を追加する</p>
-              <% end %>
-              <div class="precious-day-calender">
-                <p class="precious-day-calender-title">1月</p>
-                <% @precious_days.each do |precious_day| %>
-                  <div class="precious-day-calender-cards">
-                    <a class="precious-day-calender-card">
-                      <%= image_tag '/users/calender/anniversary.jpg' %>
-                    </a>
-                    <%= precious_day.id %>
-                    <%= precious_day.precious_date %>
-                    <%= precious_day.scene_id %>
-                  </div>
-                <% end %>
-                <p class="precious-day-calender-title">2月</p>
-                <div class="precious-day-calender-cards">
-                  <a class="precious-day-calender-card">
-                    <%= image_tag '/users/calender/birthday.jpg' %>
-                  </a>
-                  <a class="precious-day-calender-card">
-                    <%= image_tag '/users/calender/birthday.jpg' %>
-                  </a>
+    <!-- 記念日一覧 -->
+    <div class="member-page-right">
+        <div class="member-page-right-section">
+            <div class="member-calender-description">
+                <p class="member-calender-description-title">記念日リマインダー</p>
+            </div>
+            <div class="member-calender">
+                <div class="calender-switch">
+                    <ul class="calender-switch-items">
+                        <li class="calender-switch-item switch-precious-day is-active">記念日</li>
+                        <li class="calender-switch-item switch-precious-person">大切な人</li>
+                    </ul>
                 </div>
-              </div>
-            </div>
 
-            <!-- 大切な人タブ -->
-            <div class="calender-panel-item precious-person-panel">
-              <%= link_to new_preciousday_path, class: "precious-day-add-button" do %>
-                <p class="plus">＋</p>
-                <p class="add-text">記念日を追加する</p>
-              <% end %>
-              <div class="precious-person-calender">
-                <p class="precious-person-calender-title">友達</p>
-                <ul class="precious-person-calender-items">
-                  <li class="precious-person-calender-item">
-                    <a href="/preciouspeople/1">
-                      <%= image_tag '/users/calender/birthday.jpg' %>
-                      <p>テスト さん</p>
-                    </a>
-                  </li>
-                </ul>
-                <p class="precious-person-calender-title">友達</p>
-                <ul class="precious-person-calender-items">
-                  <li class="precious-person-calender-item">
-                    <a href="#">
-                      <%= image_tag '/users/calender/birthday.jpg' %>
-                      <p>テスト さん</p>
-                    </a>
-                  </li>
-                </ul>
-              </div>
+                <div class="calender-panel">
+                    <div class="calender-panel-items">
+                        <!-- 記念日タブ -->
+                        <div class="calender-panel-item precious-day-panel is-show">
+                            <%= link_to new_preciousday_path, class: "precious-day-add-button" do %>
+                            <p class="plus">＋</p>
+                            <p class="add-text">記念日を追加する</p>
+                            <% end %>
+                            <div class="precious-day-calender">
+                                <% @header_months.each do |header_month| %>
+                                <p class="precious-day-calender-title"><%= header_month["header_month"] %>月</p>
+                                <div class="precious-day-calender-cards">
+                                    <% @precious_days.each do |precious_day| %>
+                                    <% if header_month["header_month"] == precious_day.precious_date.strftime('%-m')%>
+                                    <a class="precious-day-calender-card">
+                                        <%= image_tag '/users/calender/anniversary.jpg' %>
+                                    </a>
+                                    <% end %>
+                                    <% end %>
+                                </div>
+                                <% end %>
+                            </div>
+                        </div>
+
+                        <!-- 大切な人タブ -->
+                        <div class="calender-panel-item precious-person-panel">
+                            <%= link_to new_preciousday_path, class: "precious-day-add-button" do %>
+                            <p class="plus">＋</p>
+                            <p class="add-text">記念日を追加する</p>
+                            <% end %>
+                            <div class="precious-person-calender">
+                                <% @precious_people.each do |precious_person| %>
+                                <p class="precious-person-calender-title"><%= precious_person.relation_id %></p>
+                                <ul class="precious-person-calender-items">
+                                    <li class="precious-person-calender-item">
+                                        <a href="/preciouspeople/1">
+                                            <%= image_tag '/users/calender/birthday.jpg' %>
+                                            <p><%= precious_person.name %> さん</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <% end %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>
